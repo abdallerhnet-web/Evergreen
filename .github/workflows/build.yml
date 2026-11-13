@@ -1,0 +1,17 @@
+name: build
+on: [push, workflow_dispatch]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install
+      - run: npm run build
+      - run: ls -la build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nearvault-wasm
+          path: build/nearvault.wasm
