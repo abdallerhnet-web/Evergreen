@@ -1,9 +1,9 @@
 {
-  "name": "nearvault",
+  "name": "evergreen",
   "version": "0.1.0",
   "description": "Endowment layer for AI compute on NEAR",
   "scripts": {
-    "build": "near-sdk-js build contract.ts build/nearvault.wasm"
+    "build": "near-sdk-js build contract.ts build/evergreen.wasm"
   },
   "dependencies": {
     "near-sdk-js": "2.0.0"

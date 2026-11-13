@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-# NearVault demo script (testnet). Edit the 4 variables, then run sections one by one.
+# Evergreen demo script (testnet). Edit the 4 variables, then run sections one by one.
 # Requires near-cli-rs:  https://github.com/near/near-cli-rs
 set -e
 
-VAULT=nearvault-demo.testnet      # contract account (create it first)
+VAULT=evergreen-demo.testnet      # contract account (create it first)
 OWNER=your-owner.testnet          # admin
 AGENT=your-agent.testnet          # AI agent account
 PROVIDER=your-provider.testnet    # compute provider (receives payouts)
@@ -20,7 +20,7 @@ view() { # view <method> <json>
 }
 
 # 1. Deploy + init (rate: 1000 compute units per 1 NEAR)
-near contract deploy $VAULT use-file build/nearvault.wasm with-init-call init \
+near contract deploy $VAULT use-file build/evergreen.wasm with-init-call init \
   json-args "{\"owner_id\":\"$OWNER\",\"provider_id\":\"$PROVIDER\",\"units_per_near\":\"1000\"}" \
   prepaid-gas '30 Tgas' attached-deposit '0 NEAR' $NET
 

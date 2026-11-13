@@ -1,4 +1,4 @@
-# NearVault
+# Evergreen
 
 **An endowment layer for AI compute on NEAR.** Deposit once; an authorized AI agent draws down compute credits over time, so it keeps running after its creator stops paying.
 
@@ -59,7 +59,7 @@ There are **no withdrawals**. Deposits are permanent endowments. Shares are an o
 ## Build
 ```bash
 npm install
-npm run build        # outputs build/nearvault.wasm
+npm run build        # outputs build/evergreen.wasm
 ```
 
 ## Test it on testnet (do X → see Y)
@@ -83,4 +83,4 @@ Install [near-cli-rs](https://github.com/near/near-cli-rs). Use `interact.sh` (e
 - No audit. Testnet only.
 
 ## Inspiration
-Corpus (Monad Metropolis Grand Champion): "software that outlives its owners." NearVault brings the compute-endowment idea to NEAR.
+Corpus (Monad Metropolis Grand Champion): "software that outlives its owners." Evergreen brings the compute-endowment idea to NEAR.

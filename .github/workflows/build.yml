@@ -13,5 +13,5 @@ jobs:
       - run: ls -la build
       - uses: actions/upload-artifact@v4
         with:
-          name: nearvault-wasm
-          path: build/nearvault.wasm
+          name: evergreen-wasm
+          path: build/evergreen.wasm

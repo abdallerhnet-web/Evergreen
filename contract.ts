@@ -19,7 +19,7 @@ function emit(event: string, data: Record<string, string>) {
   near.log(
     "EVENT_JSON:" +
       JSON.stringify({
-        standard: "nearvault",
+        standard: "evergreen",
         version: "1.0.0",
         event,
         data,
@@ -28,7 +28,7 @@ function emit(event: string, data: Record<string, string>) {
 }
 
 @NearBindgen({})
-class NearVault {
+class Evergreen {
   owner_id: string = "";
   provider_id: string = "";
   units_per_near: bigint = 0n; // compute units minted per 1 NEAR deposited (admin-set)
