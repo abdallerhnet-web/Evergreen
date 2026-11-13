@@ -4,6 +4,21 @@
 
 Built for NEAR Hackathon 2026. Tracks: Agent Economy, Unstoppable DeFi, Autonomous Business.
 
+## NEAR tools used
+- **near-sdk-js 2.0.0**: the vault contract, deployed on NEAR **testnet**.
+- **NEAR named and sub-accounts**: separate accounts for vault, owner, agent, compute provider and depositor.
+- **Function-call access keys**: the agent account can be given a key limited to `consume_compute` on the vault, so it can spend compute credits but nothing else (see "How the agent runs").
+- Not used: NEAR Intents, Chain Signatures, NEAR AI Cloud. This is a single-chain MVP.
+
+## Prerequisites (read before testing)
+- Node.js 18+ and npm
+- [near-cli-rs](https://github.com/near/near-cli-rs)
+- 4-5 **testnet accounts** (vault, owner, agent, provider, depositor). Create them with `near account create-account sponsor-by-faucet-service`.
+- About **10 testnet NEAR** total (free from the testnet faucet). No mainnet funds or real costs.
+
+## How the agent runs
+The agent is an ordinary NEAR account added with `add_agent`. To limit its power, add a function-call key to that account that can only call `consume_compute` on the vault. The agent then burns compute credits as it works, and the vault pays the compute provider in NEAR. If the owner stops paying, the endowment keeps the agent running until the credits run out. `get_runway_days` shows how long that is.
+
 ## The problem
 AI agents and services die when the humans who fund inference stop paying. There is no simple onchain primitive to endow future compute.
 
