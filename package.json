@@ -1,0 +1,14 @@
+{
+  "name": "nearvault",
+  "version": "0.1.0",
+  "description": "Endowment layer for AI compute on NEAR",
+  "scripts": {
+    "build": "near-sdk-js build contract.ts build/nearvault.wasm"
+  },
+  "dependencies": {
+    "near-sdk-js": "2.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}
