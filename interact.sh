@@ -3,13 +3,13 @@
 # Requires near-cli-rs:  https://github.com/near/near-cli-rs
 set -e
 
-VAULT=evergreen-demo.testnet      # contract account (create it first)
-OWNER=your-owner.testnet          # admin
-AGENT=your-agent.testnet          # AI agent account
-PROVIDER=your-provider.testnet    # compute provider (receives payouts)
-DEPOSITOR=your-depositor.testnet  # anyone depositing
+VAULT=evergreen-core.testnet      # contract account (separate faucet account)
+OWNER=evergreen-hq.testnet          # admin
+AGENT=evergreen-hq.testnet          # AI agent account (same account for the demo)
+PROVIDER=evergreen-hq.testnet       # compute provider (receives payouts)
+DEPOSITOR=evergreen-hq.testnet      # anyone depositing
 
-NET="network-config testnet sign-with-keychain send"
+NET="network-config testnet sign-with-legacy-keychain send"
 
 call() { # call <method> <json> <deposit> <signer>
   near contract call-function as-transaction $VAULT "$1" json-args "$2" \
